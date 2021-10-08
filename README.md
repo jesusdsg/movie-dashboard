@@ -5,6 +5,7 @@ On this occasion I present the adaptation of a simple dashboard based on the moc
 
 ![Dash](https://i.imgur.com/NkRIvc8.png)
 Demo [here](https://muuvi.netlify.app/)
+`username = "admin"` `password = "admin"`
 
 Description:
 A project generated with `create-react-app`, added SASS for handling styles.

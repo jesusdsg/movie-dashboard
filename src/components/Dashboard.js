@@ -86,10 +86,7 @@ function Dashboard({ isDark, setIsDark }) {
     setGenres(genre.genres);
   };
 
-  const handleScreenChange = () => {
-    windowWidth >= 650 && setCenterWidth(25);
-    windowWidth < 650 && setCenterWidth(60);
-  };
+
 
   const handleLogout = () => {
     history.push("/");
@@ -114,10 +111,15 @@ function Dashboard({ isDark, setIsDark }) {
     getRatedShows();
     getRatedActors();
     getTVShows();
-    handleScreenChange();
+    const handleScreenChange = () => {
+      windowWidth >= 650 && setCenterWidth(25);
+      windowWidth < 650 && setCenterWidth(60);
+    };
     const handleWindowResize = () => {
       setWindowWidth(window.innerWidth);
     };
+    
+    handleScreenChange();
     window.addEventListener("resize", handleWindowResize);
     return () => {
       window.removeEventListener("resize", handleWindowResize);

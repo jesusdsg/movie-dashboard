@@ -45,6 +45,7 @@ export default function Content() {
   return (
     <div>
       <MenuTabs darkMode={darkMode} />
+      <h3 className="content__title">Most Popular Movies</h3>
       <div>
         {popMovies.length > 0 ? (
           <Carousel
@@ -53,7 +54,7 @@ export default function Content() {
             showIndicators={false}
             infiniteLoop={true}
             autoPlay
-            className="w-96 lg:w-full my-10"
+            className="w-96 lg:w-full mt-4 mb-10"
           >
             {popMovies.slice(1, 8).map((movie: any) => {
               return (
@@ -68,7 +69,9 @@ export default function Content() {
           </Carousel>
         ) : null}
       </div>
+
       <div>
+        <h3 className="content__title">Most Rated Actors</h3>
         <Carousel
           showThumbs={false}
           showStatus={false}
@@ -78,7 +81,7 @@ export default function Content() {
           swipeable
           autoPlay
           centerSlidePercentage={centerWidth}
-          className="w-96 lg:w-full mb-10"
+          className="w-96 lg:w-full mt-4 mb-10"
         >
           {ratedActors.slice(9, 20).map((actor: any) => {
             return (
@@ -93,6 +96,7 @@ export default function Content() {
         </Carousel>
       </div>
       <div>
+        <h3 className="content__title">Continue Watching</h3>
         <Carousel
           showThumbs={false}
           showStatus={false}

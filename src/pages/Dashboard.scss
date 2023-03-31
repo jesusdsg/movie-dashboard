@@ -1,15 +1,22 @@
+@import "../variables.scss";
 .dashboard {
   display: flex;
-  gap: 2rem;
   .dashboard__left-panel {
-    width: 22% !important;
+    width: 20vw !important;
   }
   .dashboard__mid-panel {
     margin-top: 2rem;
-    width: 50%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: calc(100vw - 38vw);
   }
   .dashboard__right-panel {
     margin-top: 2rem;
-    width: 20%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: 18vw;
+  }
+  .dashboard__right-panel--dark {
+    border-left: 1px solid $dark-3;
   }
 }

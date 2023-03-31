@@ -6,7 +6,9 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Carousel } from "react-responsive-carousel";
 import PopularMovies from "@components/Movies/PopularMovies";
+import Actor from "@components/Movies/Actor";
 export default function Content() {
+  const [centerWidth, setCenterWidth] = useState(25);
   const [darkMode, setDarkMode] = useState<boolean>(true);
   const [popMovies, setPopMovies] = useState<any>([]);
   const [genres, setGenres] = useState<any>([]);
@@ -116,12 +118,21 @@ export default function Content() {
           showThumbs={false}
           showStatus={false}
           showIndicators={false}
-          infiniteLoop={true}
+          emulateTouch={true}
+          centerMode={true}
+          swipeable
           autoPlay
-          className="w-96 lg:w-full my-10"
+          centerSlidePercentage={centerWidth}
+          className="w-96 lg:w-full mb-10"
         >
-          {ratedActors.slice(1, 8).map((actor: any) => {
-            console.log("actor", actor);
+          {ratedActors.slice(9, 20).map((actor: any) => {
+            return (
+              <Actor
+                name={actor.name}
+                img={actor.profile_path}
+                popularity={actor.popularity}
+              />
+            );
           })}
         </Carousel>
       </div>

@@ -18,7 +18,7 @@
   }
 
   .sidebar-container__logo {
-    width: 80%;
+    width: 60%;
     height: auto;
     margin: auto;
   }
@@ -40,14 +40,14 @@
 
 .sidebar-container--dark {
   background-color: $dark-2;
-  border: 1px solid $dark-3;
+  border-right: 1px solid $dark-3;
   transition-duration: 0.5s;
 
   li {
     cursor: pointer;
     &:hover {
       background-color: $dark-1;
-      border-right: 1px solid $red-1;
+      border-right: 2px solid $red-1;
     }
   }
 }

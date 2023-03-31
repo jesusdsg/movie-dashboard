@@ -37,7 +37,13 @@ export default function Dashboard() {
         doloremque expedita. Sit reprehenderit voluptatibus at eveniet
         perferendis alias corporis repudiandae necessitatibus iste?
       </div>
-      <div className="dashboard__right-panel">
+      <div
+        className={
+          darkMode
+            ? "dashboard__right-panel dashboard__right-panel--dark"
+            : "dashboard__right-panel"
+        }
+      >
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim, debitis
         ratione! Corporis autem et nemo ab facere ipsum, ea, nihil quod
         voluptate incidunt numquam ullam consequuntur magnam voluptatem at amet.

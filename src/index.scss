@@ -124,3 +124,37 @@ h6 {
     gap: 1rem;
   }
 }
+
+.actor {
+  margin: 0.5rem;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  .actor__img {
+    height: 100%;
+    border-radius: $border-radius;
+  }
+  .actor__info {
+    top: 0;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.267);
+    top: 0.5rem;
+    height: calc(100% - 1rem);
+    width: calc(100% - 1rem);
+    border-radius: $border-radius;
+  }
+
+  .actor__name {
+    margin-top: 100%;
+    font-size: 10pt;
+  }
+
+  .actor__ranking {
+    font-size: 10pt;
+    margin: 0 20%;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    color: $light-2;
+  }
+}

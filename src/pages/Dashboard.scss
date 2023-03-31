@@ -3,18 +3,27 @@
   display: flex;
   .dashboard__left-panel {
     width: 20vw !important;
+    @media screen and (max-width: 700px) {
+      transform: translateX(-20vh);
+    }
   }
   .dashboard__mid-panel {
     margin-top: 2rem;
     padding-left: 2rem;
     padding-right: 2rem;
-    width: calc(100vw - 38vw);
+    width: calc(100vw - 40vw);
+    @media screen and (max-width: 700px) {
+      transform: translateX(-11vh);
+    }
   }
   .dashboard__right-panel {
     margin-top: 2rem;
     padding-left: 2rem;
     padding-right: 2rem;
-    width: 18vw;
+    width: 20vw;
+    @media screen and (max-width: 700px) {
+      display: none;
+    }
   }
   .dashboard__right-panel--dark {
     border-left: 1px solid $dark-3;

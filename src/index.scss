@@ -13,7 +13,7 @@ h4,
 h5,
 h6 {
   font-family: "Montserrat", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 ::-webkit-scrollbar {
@@ -193,5 +193,57 @@ h6 {
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
     object-fit: cover;
+  }
+}
+
+.tops {
+  .tops__movie-container {
+    display: grid;
+    gap: 1rem;
+    max-height: 80vh;
+    overflow-y: hidden;
+  }
+  .tops__title {
+    text-transform: uppercase;
+    margin: 2rem auto;
+    text-align: left;
+    font-weight: bold;
+    font-size: 14pt;
+  }
+  .tops__movie {
+    display: flex;
+    gap: 0.5rem;
+    img {
+      margin: auto;
+      max-height: 20vh;
+      border-radius: $border-radius;
+    }
+  }
+
+  .tops__movie-info {
+    width: 100%;
+    font-size: 10pt;
+  }
+}
+
+.search__container {
+  .search__icon {
+    position: absolute;
+    margin-top: 1.8rem;
+    display: flex;
+    right: 8vh;
+    color: $dark-4;
+  }
+  .search__input {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: $border-radius;
+    font-size: 12pt;
+    width: 100%;
+    border: 1px solid $dark-3;
+
+    &:focus {
+      outline: none;
+    }
   }
 }

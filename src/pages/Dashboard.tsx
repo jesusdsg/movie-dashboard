@@ -3,17 +3,36 @@ import { themeStore } from "../store/theme";
 import React, { useEffect, useState } from "react";
 import "./Dashboard.scss";
 import Content from "@components/Content/Content";
+import Tops from "@components/Movies/Tops";
+import axios from "axios";
+const API_KEY = import.meta.env.VITE_API_KEY;
+import { BiSearchAlt } from "react-icons/bi";
 
 export default function Dashboard() {
   const [darkMode, setDarkMode] = useState<boolean>(true);
-
-  useEffect(
-    () =>
-      themeStore.subscribe((state: any) => {
-        setDarkMode(state.darkMode);
-      }),
-    []
-  );
+  const [ratedMovies, setRatedMovies] = useState<any>([]);
+  const [ratedShows, setRatedShows] = useState<any>([]);
+  const getRatedMovies = async () => {
+    const res = await axios.get(
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`
+    );
+    const movies = res.data;
+    setRatedMovies(movies.results);
+  };
+  const getRatedShows = async () => {
+    const res = await axios.get(
+      `https://api.themoviedb.org/3/tv/top_rated?api_key=${API_KEY}&language=en-US&page=1`
+    );
+    const shows = res.data;
+    setRatedShows(shows.results);
+  };
+  useEffect(() => {
+    getRatedMovies();
+    getRatedShows();
+    themeStore.subscribe((state: any) => {
+      setDarkMode(state.darkMode);
+    });
+  }, []);
 
   return (
     <div className="dashboard">
@@ -30,13 +49,16 @@ export default function Dashboard() {
             : "dashboard__right-panel"
         }
       >
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim, debitis
-        ratione! Corporis autem et nemo ab facere ipsum, ea, nihil quod
-        voluptate incidunt numquam ullam consequuntur magnam voluptatem at amet.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero eligendi
-        fugiat iusto nisi quaerat nemo nam ducimus reiciendis impedit numquam
-        perspiciatis magnam reprehenderit, totam sapiente? Incidunt similique
-        sequi quas facilis!
+        <div className="search__container">
+          <BiSearchAlt size="1.2rem" className="search__icon" />
+          <input
+            type="text"
+            placeholder="Search..."
+            className="search__input"
+          />
+        </div>
+        <Tops title={"Popular Movies"} movies={ratedMovies} />
+        <Tops title={"Popular TV Shows"} movies={ratedShows} />
       </div>
     </div>
   );

@@ -1,0 +1,57 @@
+@import "../../variables.scss";
+
+.sidebar-container {
+  position: fixed;
+  width: 20vw;
+  height: 100vh;
+  padding-top: 2rem;
+
+  h3 {
+    margin: 2rem 2rem;
+    font-size: 16pt;
+    color: $light-1;
+  }
+
+  h4 {
+    margin: 1rem 2rem;
+    font-size: 14pt;
+  }
+
+  .sidebar-container__logo {
+    width: 80%;
+    height: auto;
+    margin: auto;
+  }
+
+  .sidebar-container__list {
+    width: 100%;
+
+    li {
+      font-size: 12pt !important;
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      list-style-type: none;
+      width: 100%;
+      padding: 0.8rem 2rem;
+    }
+  }
+}
+
+.sidebar-container--dark {
+  background-color: $dark-2;
+  border: 1px solid $dark-3;
+  transition-duration: 0.5s;
+
+  li {
+    cursor: pointer;
+    &:hover {
+      background-color: $dark-1;
+      border-right: 1px solid $red-1;
+    }
+  }
+}
+
+.sidebar-container--light {
+  background-color: $light-3;
+}

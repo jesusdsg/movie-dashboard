@@ -1,0 +1,15 @@
+.dashboard {
+  display: flex;
+  gap: 2rem;
+  .dashboard__left-panel {
+    width: 22% !important;
+  }
+  .dashboard__mid-panel {
+    margin-top: 2rem;
+    width: 50%;
+  }
+  .dashboard__right-panel {
+    margin-top: 2rem;
+    width: 20%;
+  }
+}

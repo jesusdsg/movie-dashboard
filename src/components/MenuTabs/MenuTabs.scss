@@ -1,0 +1,30 @@
+@import "../../variables.scss";
+.menu {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  .menu__tab {
+    font-size: 16pt;
+    transition-duration: 0.5s;
+  }
+
+  .menu__tab--light {
+    color: $dark-3;
+    &:hover {
+      color: $dark-1;
+    }
+  }
+
+  .menu__tab--dark {
+    color: $light-3;
+    &:hover {
+      color: $light-1;
+    }
+  }
+
+  .menu__tab--active {
+    color: $light-1;
+  }
+}

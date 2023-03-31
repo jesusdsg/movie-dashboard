@@ -14,25 +14,47 @@ export default function Tops({ title, movies }: any) {
   };
   useEffect(() => {
     getGenre();
-    console.log("Genre", genres);
   }, []);
+
+  const getGenreName = (id: number) => {
+    return genres.find((x: any) => x.id == id);
+  };
+
+  const getGenresList = (inputList: any) => {
+    let outputList: any = null;
+    inputList.forEach((id: number) => {
+      const genre: any = getGenreName(id);
+      outputList.concat(...genre.name);
+    });
+    console.log("Aqui", outputList);
+    return outputList;
+  };
 
   return (
     <div className="tops">
       <h3 className="tops__title">{title}</h3>
       <div className="tops__movie-container">
-        {movies.slice(3, 6).map((movie: any) => (
-          <div className="tops__movie" key={movie.id}>
-            <img
-              src={IMG_URI + movie.poster_path}
-              title={movie.original_title}
-            />
-            <div className="tops__movie-info">
-              <h4 className="tops__movie-title">{movie.original_title}</h4>
-              <p className="tops__movie-year">{movie.release_date}</p>
-            </div>
-          </div>
-        ))}
+        {movies.slice(3, 6).map(
+          (movie: any) => (
+            console.log("Gener", genres),
+            console.log("Movie", movie),
+            (
+              <div className="tops__movie" key={movie.id}>
+                <img
+                  src={IMG_URI + movie.poster_path}
+                  title={movie.original_title}
+                />
+                <div className="tops__movie-info">
+                  <h4 className="tops__movie-title">{movie.original_title}</h4>
+                  <p className="tops__movie-gnre">
+                    {getGenresList(movie.genre_ids)}
+                  </p>
+                  <p className="tops__movie-year">{movie.release_date}</p>
+                </div>
+              </div>
+            )
+          )
+        )}
         <button type="button" className="btn btn--main">
           See more
         </button>

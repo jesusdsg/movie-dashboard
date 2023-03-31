@@ -79,7 +79,6 @@ export default function Content() {
           emulateTouch={true}
           centerMode={true}
           swipeable
-          autoPlay
           centerSlidePercentage={centerWidth}
           className="w-96 lg:w-full mt-4 mb-10"
         >

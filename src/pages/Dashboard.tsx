@@ -9,9 +9,11 @@ const API_KEY = import.meta.env.VITE_API_KEY;
 import { BiSearchAlt } from "react-icons/bi";
 
 export default function Dashboard() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [darkMode, setDarkMode] = useState<boolean>(true);
   const [ratedMovies, setRatedMovies] = useState<any>([]);
   const [ratedShows, setRatedShows] = useState<any>([]);
+  const [centerWidth, setCenterWidth] = useState(25);
   const getRatedMovies = async () => {
     const res = await axios.get(
       `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`
@@ -32,7 +34,20 @@ export default function Dashboard() {
     themeStore.subscribe((state: any) => {
       setDarkMode(state.darkMode);
     });
-  }, []);
+    const handleScreenChange = () => {
+      windowWidth >= 650 && setCenterWidth(25);
+      windowWidth < 650 && setCenterWidth(60);
+    };
+    const handleWindowResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    handleScreenChange();
+    window.addEventListener("resize", handleWindowResize);
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, [windowWidth]);
 
   return (
     <div className="dashboard">

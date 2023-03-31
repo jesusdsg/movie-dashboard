@@ -44,8 +44,10 @@
   transition-duration: 0.5s;
 
   li {
+    color: $light-3;
     cursor: pointer;
     &:hover {
+      color: $light-1;
       background-color: $dark-1;
       border-right: 2px solid $red-1;
     }

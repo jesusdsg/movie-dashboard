@@ -22,20 +22,6 @@ export default function Dashboard() {
       </div>
       <div className="dashboard__mid-panel">
         <Content />
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis
-        distinctio eius quas minus? Perferendis ex quasi error cupiditate
-        dolorum unde neque esse asperiores minus saepe, ad voluptates reiciendis
-        mollitia molestias? Lorem ipsum, dolor sit amet consectetur adipisicing
-        elit. Dolores dolor adipisci veniam placeat autem incidunt vitae dolorem
-        doloremque, sequi commodi voluptatum illo quisquam sed delectus
-        repudiandae consequuntur necessitatibus dignissimos debitis? Lorem
-        ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum incidunt
-        eveniet quidem repudiandae consectetur illum a cum cumque rem illo
-        voluptatem porro consequuntur, odio magnam! Odio provident ipsum dolore
-        consectetur! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Quod dignissimos laborum deserunt blanditiis iste optio atque vero
-        doloremque expedita. Sit reprehenderit voluptatibus at eveniet
-        perferendis alias corporis repudiandae necessitatibus iste?
       </div>
       <div
         className={

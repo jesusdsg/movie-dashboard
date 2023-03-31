@@ -127,8 +127,12 @@ h6 {
 
 .actor {
   margin: 0.5rem;
-  box-shadow: $box-shadow;
   border-radius: $border-radius;
+  transition-duration: 0.5s;
+  cursor: pointer;
+  &:hover {
+    box-shadow: $box-shadow;
+  }
   .actor__img {
     height: 100%;
     border-radius: $border-radius;
@@ -137,16 +141,19 @@ h6 {
     top: 0;
     height: 100%;
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.267);
+    background-color: rgba(0, 0, 0, 0.137);
     top: 0.5rem;
     height: calc(100% - 1rem);
     width: calc(100% - 1rem);
     border-radius: $border-radius;
+    text-align: left;
   }
 
   .actor__name {
     margin-top: 100%;
+    font-weight: bold;
     font-size: 10pt;
+    margin-left: 20%;
   }
 
   .actor__ranking {
@@ -156,5 +163,35 @@ h6 {
     gap: 0.5rem;
     align-items: center;
     color: $light-2;
+  }
+}
+
+.continue {
+  margin: 2rem;
+  border-radius: $border-radius;
+  background-color: $dark-1;
+  text-align: left;
+  transition-duration: 0.5s;
+  cursor: pointer;
+  &:hover {
+    box-shadow: $box-shadow;
+  }
+
+  .continue__bar {
+    height: 5px;
+    background-color: $red-1;
+  }
+  .continue__body {
+    height: 10vh;
+    padding: 1rem 2rem;
+    overflow: hidden;
+  }
+
+  .continue__img {
+    height: 20vh;
+    top: 0;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    object-fit: cover;
   }
 }

@@ -7,6 +7,7 @@ import axios from "axios";
 import { Carousel } from "react-responsive-carousel";
 import PopularMovies from "@components/Movies/PopularMovies";
 import Actor from "@components/Movies/Actor";
+import ContinueWatching from "@components/Movies/ContinueWatching";
 export default function Content() {
   const [centerWidth, setCenterWidth] = useState(25);
   const [darkMode, setDarkMode] = useState<boolean>(true);
@@ -132,6 +133,25 @@ export default function Content() {
                 img={actor.profile_path}
                 popularity={actor.popularity}
               />
+            );
+          })}
+        </Carousel>
+      </div>
+      <div>
+        <Carousel
+          showThumbs={false}
+          showStatus={false}
+          showIndicators={false}
+          emulateTouch={true}
+          centerMode={true}
+          swipeable
+          autoPlay
+          centerSlidePercentage={40}
+          className="w-96 lg:w-full mb-10"
+        >
+          {popMovies.slice(7, 14).map((movie: any) => {
+            return (
+              <ContinueWatching title={movie.title} img={movie.poster_path} />
             );
           })}
         </Carousel>

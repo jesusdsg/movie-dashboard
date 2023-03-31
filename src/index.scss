@@ -6,21 +6,13 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&display=swap");
 
-.primary-font {
-  font-family: "Khand", sans-serif;
-}
-
-.secondary-font {
-  font-family: "Open Sans", Arial, Helvetica, sans-serif;
-}
-
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: "Khand", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
 }
 
@@ -37,8 +29,7 @@ h6 {
 }
 
 :root {
-  font-family: "Open Sans", Inter, system-ui, Avenir, Helvetica, Arial,
-    sans-serif;
+  font-family: "Open Sans", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -73,5 +64,63 @@ h6 {
   background-size: 200% auto;
   &:hover {
     background-position: center right;
+  }
+}
+
+.btn--transparent {
+  background-color: transparent;
+  color: $light-1;
+  border: 1px solid $light-1;
+  &:hover {
+    background-color: $light-1;
+    color: $dark-1;
+  }
+}
+
+.movies {
+  border-radius: $border-radius;
+  display: flex;
+  width: auto;
+  height: 50vh;
+  cursor: pointer;
+
+  .movies__overlay {
+    top: 0;
+    background-color: #00000062;
+    z-index: 100;
+    border-radius: $border-radius !important;
+    text-align: left;
+
+    .movies__info-container {
+      margin: 20vh 2rem;
+      height: 30vh;
+      overflow: hidden;
+    }
+  }
+
+  .movies__title {
+    color: $light-1;
+    font-weight: bold;
+    font-size: 16pt;
+  }
+
+  .movies__description {
+    font-weight: normal;
+    color: $light-3;
+    height: 10vh;
+    overflow: hidden;
+  }
+
+  .movies__img {
+    top: 0;
+    position: absolute;
+    height: 100%;
+    width: auto;
+    border-radius: $border-radius;
+  }
+
+  .movies__btn-container {
+    display: flex;
+    gap: 1rem;
   }
 }

@@ -3,7 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 
 interface CustomCarouselProps {
-  children: React.ReactNode | any;
+  children: any;
 }
 export default function CustomCarousel({ children }: CustomCarouselProps) {
   return (

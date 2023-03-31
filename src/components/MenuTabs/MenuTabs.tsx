@@ -1,9 +1,9 @@
 import "./MenuTabs.scss";
 export default function MenuTabs({ darkMode }: any) {
   const menu = [
-    { title: "TV Series", link: "", active: false },
-    { title: "Movies", link: "", active: true },
-    { title: "Animes", link: "", active: false },
+    { title: "TV Series", link: "#", active: false },
+    { title: "Movies", link: "#", active: true },
+    { title: "Animes", link: "#", active: false },
   ];
   return (
     <div className="menu">

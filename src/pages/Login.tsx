@@ -3,8 +3,11 @@ import { themeStore } from "../store/theme";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Login() {
-  const [darkMode, setDarkMode] = useState<boolean>(true);
+interface LoginProps {
+  darkMode: boolean
+}
+
+export default function Login({darkMode}: LoginProps) {
   const navigate = useNavigate();
   const [credentials, setCredentials] = useState<{
     email: string;
@@ -27,15 +30,6 @@ export default function Login() {
   const handleChange = (e: any) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
-
-  useEffect(
-    () =>
-      themeStore.subscribe((state: any) => {
-        setDarkMode(state.darkMode);
-      }),
-    []
-  );
-
   return (
     <Layout>
       <div className="mt-20">
@@ -59,7 +53,7 @@ export default function Login() {
             <input
               type="password"
               name="password"
-              placeholder="*****"
+              placeholder="password"
               className={
                 !darkMode
                   ? "login-container__input--light"

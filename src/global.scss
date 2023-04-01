@@ -34,7 +34,7 @@ h6 {
   font-weight: 400;
 
   color-scheme: light dark;
-  background-color: $dark-2;
+  background-color: $dark-1;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -169,21 +169,19 @@ h6 {
 .continue {
   margin: 2rem;
   border-radius: $border-radius;
-  background-color: $dark-1;
   text-align: left;
   transition-duration: 0.5s;
   cursor: pointer;
   &:hover {
     box-shadow: $box-shadow;
   }
-
   .continue__bar {
     height: 5px;
     background-color: $red-1;
   }
   .continue__body {
     height: 10vh;
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem;
     overflow: hidden;
   }
 
@@ -196,6 +194,14 @@ h6 {
   }
 }
 
+.continue--dark {
+  background-color: $dark-2;
+}
+
+.continue--light {
+  background-color: $light-2;
+}
+
 .tops {
   .tops__movie-container {
     display: grid;
@@ -204,7 +210,6 @@ h6 {
     overflow-y: hidden;
   }
   .tops__title {
-    text-transform: uppercase;
     margin: 2rem auto;
     text-align: left;
     font-weight: bold;
@@ -217,7 +222,13 @@ h6 {
       margin: auto;
       max-height: 20vh;
       border-radius: $border-radius;
+      
     }
+
+    .tops__movie__title {
+      font-weight: normal;
+    }
+
     .top__imdb-container {
       display: inline-flex;
       gap: 5px;
@@ -244,7 +255,6 @@ h6 {
 
 .content__title {
   font-size: 14pt;
-  text-transform: uppercase;
   font-weight: bold;
 }
 
@@ -254,8 +264,18 @@ h6 {
     margin-top: 1.8rem;
     display: flex;
     right: 8vh;
+    
+  }
+  .search__icon--dark {
+    color: $light-3;
+  }
+
+  .search__icon--light {
     color: $dark-4;
   }
+
+
+
   .search__input {
     margin-top: 1rem;
     padding: 0.5rem 1rem;
@@ -268,9 +288,34 @@ h6 {
       outline: none;
     }
   }
+
+  .search__input--dark {
+    background-color: $dark-1;
+    color: $light-1;
+    border-color: $dark-2;
+  }
+
+  .search__input--light {
+    background-color: $light-1;
+    color: $dark-1;
+    border-color: $light-2;
+  }
 }
 
 .carousel__container {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+
+  h1, h2, h3, h4 {
+    color: $light-1 !important;
+  }
+
+  span, p{
+    color: $light-2 !important
+  }
+  
+
   @media screen and (max-width: 700px) {
     //transform: translateX(-5vh);
     width: 100vw;

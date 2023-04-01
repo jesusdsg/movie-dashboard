@@ -6,7 +6,7 @@ export default function MenuTabs({ darkMode }: any) {
     { title: "Animes", link: "#", active: false },
   ];
   return (
-    <div className="menu">
+    <div className={darkMode ? "menu menu--dark" : "menu menu--light"}>
       {menu.map(
         (menuItem: { title: string; link: string; active: boolean }) => {
           if (menuItem.active) {
@@ -15,8 +15,8 @@ export default function MenuTabs({ darkMode }: any) {
                 key={menuItem.title}
                 className={
                   darkMode
-                    ? "menu__tab menu__tab--dark menu__tab--active"
-                    : "menu__tab menu__tab--light menu__tab--active"
+                    ? "menu__tab menu__tab--dark menu__tab--active--dark"
+                    : "menu__tab menu__tab--light menu__tab--active--light"
                 }
                 href={menuItem.link}
               >

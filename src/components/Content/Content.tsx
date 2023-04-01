@@ -8,9 +8,13 @@ import { Carousel } from "react-responsive-carousel";
 import PopularMovies from "@components/Movies/PopularMovies";
 import Actor from "@components/Movies/Actor";
 import ContinueWatching from "@components/Movies/ContinueWatching";
-export default function Content() {
+
+interface ContentProps {
+  darkMode: boolean;
+}
+
+export default function Content({ darkMode }: ContentProps) {
   const [centerWidth, setCenterWidth] = useState(25);
-  const [darkMode, setDarkMode] = useState<boolean>(true);
   const [popMovies, setPopMovies] = useState<any>([]);
   const [ratedActors, setRatedActors] = useState<any>([]);
 
@@ -37,9 +41,6 @@ export default function Content() {
   useEffect(() => {
     getPopMovies();
     getRatedActors();
-    themeStore.subscribe((state: any) => {
-      setDarkMode(state.darkMode);
-    });
   }, []);
 
   return (
@@ -54,7 +55,7 @@ export default function Content() {
             showIndicators={false}
             infiniteLoop={true}
             autoPlay
-            className="w-96 lg:w-full mt-4 mb-10 carousel__container"
+            className="carousel__container"
           >
             {popMovies.slice(1, 8).map((movie: any) => {
               return (
@@ -80,7 +81,7 @@ export default function Content() {
           centerMode={true}
           swipeable
           centerSlidePercentage={centerWidth}
-          className="w-96 lg:w-full mt-4 mb-10 carousel__container"
+          className="carousel__container"
         >
           {ratedActors.slice(9, 20).map((actor: any) => {
             return (
@@ -105,11 +106,12 @@ export default function Content() {
           swipeable
           autoPlay
           centerSlidePercentage={40}
-          className="w-96 lg:w-full mb-10 carousel__container"
+          className="carousel__container"
         >
           {popMovies.slice(7, 14).map((movie: any) => {
             return (
               <ContinueWatching
+                darkMode={darkMode}
                 key={movie.id}
                 title={movie.title}
                 img={movie.poster_path}

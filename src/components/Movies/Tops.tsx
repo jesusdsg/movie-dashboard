@@ -47,8 +47,8 @@ export default function Tops({ title, movies }: any) {
                   title={movie.original_title}
                 />
                 <div className="tops__movie-info">
-                  <h4 className="tops__movie-title">{movie.original_title || movie.original_name}</h4>
-                  <p className="tops__movie-gnre">
+                  <h4 className="tops__movie__title">{movie.original_title || movie.original_name}</h4>
+                  <p className="tops__movie__gnre">
                     {genreList}
                   </p>
                   <p className="tops__movie-year">{movie.release_date || movie.first_air_date}</p>

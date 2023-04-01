@@ -11,7 +11,14 @@ import {
   BiRadioCircleMarked,
 } from "react-icons/bi";
 
+import { BiSun, BiMoon } from "react-icons/bi";
+import { themeStore } from "@stores/theme";
+
+import logoDark from '@assets/logo.png';
+import logoLight from '@assets/logolight.png';
+
 export default function Sidebar({ darkMode }: any) {
+  const toggleDarkMode = themeStore((store: any) => store.toggleDarkMode);
   const menu = {
     title: "Menu",
     items: [
@@ -82,11 +89,17 @@ export default function Sidebar({ darkMode }: any) {
       }
     >
       <img
-        src="/src/assets/logo.png"
+        src={darkMode ? logoDark : logoLight}
         alt="logo"
         className="sidebar-container__logo"
       ></img>
-      <h3>Menu</h3>
+      <div className="sidebar-container__header">
+        <h3>Menu</h3>
+        <button type="button" onClick={toggleDarkMode}>
+          {darkMode ? <BiSun /> : <BiMoon />}
+        </button>
+      </div>
+
       {menu.items.map((item: any) => {
         return (
           <div key={item.title}>
@@ -97,7 +110,7 @@ export default function Sidebar({ darkMode }: any) {
                     return (
                       <li key={child.title}>
                         {child.icon}
-                        <a href={child.url} key={child.title}>
+                        <a href={child.url} key={child.title} className={darkMode ? 'sidebar__container__link--dark' : 'sidebar__container__link-light'}>
                           {child.title}
                         </a>
                       </li>

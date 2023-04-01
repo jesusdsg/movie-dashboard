@@ -6,11 +6,16 @@ import Content from "@components/Content/Content";
 import Tops from "@components/Movies/Tops";
 import axios from "axios";
 const API_KEY = import.meta.env.VITE_API_KEY;
-import { BiSearchAlt } from "react-icons/bi";
+import { BiSearch } from "react-icons/bi";
 
-export default function Dashboard() {
+interface DashboardProps {
+  darkMode: boolean
+}
+
+export default function Dashboard({darkMode}: DashboardProps) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [darkMode, setDarkMode] = useState<boolean>(true);
+  /* 
+  const [darkMode, setDarkMode] = useState<boolean>(true); */
   const [ratedMovies, setRatedMovies] = useState<any>([]);
   const [ratedShows, setRatedShows] = useState<any>([]);
   const [centerWidth, setCenterWidth] = useState(25);
@@ -31,9 +36,9 @@ export default function Dashboard() {
   useEffect(() => {
     getRatedMovies();
     getRatedShows();
-    themeStore.subscribe((state: any) => {
+   /*  themeStore.subscribe((state: any) => {
       setDarkMode(state.darkMode);
-    });
+    }); */
     const handleScreenChange = () => {
       windowWidth >= 650 && setCenterWidth(25);
       windowWidth < 650 && setCenterWidth(60);
@@ -50,26 +55,26 @@ export default function Dashboard() {
   }, [windowWidth]);
 
   return (
-    <div className="dashboard">
-      <div className="dashboard__left-panel">
+    <div className={darkMode ? "dashboard dashboard--dark" : "dashboard dashboard--light"}>
+      <div className={darkMode ? "dashboard__left-panel dashboard__left-panel--dark" : "dashboard__left-panel dashboard__left-panel--light"}>
         <Sidebar darkMode={darkMode} />
       </div>
       <div className="dashboard__mid-panel">
-        <Content />
+        <Content darkMode={darkMode} />
       </div>
       <div
         className={
           darkMode
             ? "dashboard__right-panel dashboard__right-panel--dark"
-            : "dashboard__right-panel"
+            : "dashboard__right-panel dashboard__right-panel--light"
         }
       >
         <div className="search__container">
-          <BiSearchAlt size="1.2rem" className="search__icon" />
+          <BiSearch size="1.2rem" className={darkMode ? "search__icon search__icon--dark":"search__icon search__icon--light" } />
           <input
             type="text"
             placeholder="Search..."
-            className="search__input"
+            className={darkMode ? "search__input search__input--dark" : "search__input search__input--light"}
           />
         </div>
         <Tops title={"Popular Movies"} movies={ratedMovies} />

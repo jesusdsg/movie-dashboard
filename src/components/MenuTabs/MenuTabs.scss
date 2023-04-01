@@ -5,7 +5,7 @@
   margin-top: 1rem;
   margin-bottom: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid $dark-3;
+
 
   @media screen and (max-width: 700px) {
     width: 100vh;
@@ -20,18 +20,32 @@
   .menu__tab--light {
     color: $dark-3;
     &:hover {
-      color: $dark-1;
+      color: $dark-1 !important;
     }
   }
 
   .menu__tab--dark {
     color: $light-3;
     &:hover {
-      color: $light-1;
+      color: $light-1 !important;
     }
   }
 
-  .menu__tab--active {
-    color: $light-1;
+  .menu__tab--active--dark {
+    color: $light-1 !important;
   }
+
+  .menu__tab--active--light {
+    color: $dark-1 !important;
+  }
+
+}
+
+
+.menu--dark {
+border-bottom: 1px solid $dark-2;
+}
+
+.menu--light {
+  border-bottom: 1px solid $light-2 
 }

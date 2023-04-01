@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 const IMG_URI = import.meta.env.VITE_IMG_URI;
 const API_KEY = import.meta.env.VITE_API_KEY;
+import imdbLogo from '@assets/imdb.png'
 export default function Tops({ title, movies }: any) {
   const [genres, setGenres] = useState<any>([]);
   //Genre list
@@ -21,12 +22,14 @@ export default function Tops({ title, movies }: any) {
   };
 
   const getGenresList = (inputList: any) => {
-    let outputList: any = null;
+    let outputList: any = [];
     inputList.forEach((id: number) => {
       const genre: any = getGenreName(id);
-      outputList.concat(...genre.name);
+      if (!!genre){
+        outputList.push(` ${genre.name}`)
+      }
+      
     });
-    console.log("Aqui", outputList);
     return outputList;
   };
 
@@ -35,25 +38,26 @@ export default function Tops({ title, movies }: any) {
       <h3 className="tops__title">{title}</h3>
       <div className="tops__movie-container">
         {movies.slice(3, 6).map(
-          (movie: any) => (
-            console.log("Gener", genres),
-            console.log("Movie", movie),
-            (
+          (movie: any) => {
+            const genreList = getGenresList(movie.genre_ids);
+            return (
               <div className="tops__movie" key={movie.id}>
                 <img
                   src={IMG_URI + movie.poster_path}
                   title={movie.original_title}
                 />
                 <div className="tops__movie-info">
-                  <h4 className="tops__movie-title">{movie.original_title}</h4>
+                  <h4 className="tops__movie-title">{movie.original_title || movie.original_name}</h4>
                   <p className="tops__movie-gnre">
-                    {getGenresList(movie.genre_ids)}
+                    {genreList}
                   </p>
-                  <p className="tops__movie-year">{movie.release_date}</p>
+                  <p className="tops__movie-year">{movie.release_date || movie.first_air_date}</p>
+                  <div className="top__imdb-container"><img src={imdbLogo} /><span>{movie.vote_average}</span></div>
+                  
                 </div>
               </div>
             )
-          )
+            }
         )}
         <button type="button" className="btn btn--main">
           See more

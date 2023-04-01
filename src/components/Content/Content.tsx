@@ -54,7 +54,7 @@ export default function Content() {
             showIndicators={false}
             infiniteLoop={true}
             autoPlay
-            className="w-96 lg:w-full mt-4 mb-10"
+            className="w-96 lg:w-full mt-4 mb-10 carousel__container"
           >
             {popMovies.slice(1, 8).map((movie: any) => {
               return (
@@ -80,7 +80,7 @@ export default function Content() {
           centerMode={true}
           swipeable
           centerSlidePercentage={centerWidth}
-          className="w-96 lg:w-full mt-4 mb-10"
+          className="w-96 lg:w-full mt-4 mb-10 carousel__container"
         >
           {ratedActors.slice(9, 20).map((actor: any) => {
             return (
@@ -105,7 +105,7 @@ export default function Content() {
           swipeable
           autoPlay
           centerSlidePercentage={40}
-          className="w-96 lg:w-full mb-10"
+          className="w-96 lg:w-full mb-10 carousel__container"
         >
           {popMovies.slice(7, 14).map((movie: any) => {
             return (

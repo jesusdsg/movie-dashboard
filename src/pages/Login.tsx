@@ -87,7 +87,7 @@ export default function Login() {
 
           <div className="login-container__btn-container">
             <button
-              type="button"
+              type="submit"
               className="btn btn--main"
               onClick={() => handleSubmit()}
             >

@@ -2,7 +2,7 @@
 .dashboard {
   display: flex;
   .dashboard__left-panel {
-    width: 20vw !important;
+    width: 15vw !important;
     @media screen and (max-width: 700px) {
       transform: translateX(-20vh);
     }
@@ -11,9 +11,13 @@
     margin-top: 2rem;
     padding-left: 2rem;
     padding-right: 2rem;
-    width: calc(100vw - 40vw);
+    width: calc(100vw - 35vw);
     @media screen and (max-width: 700px) {
-      transform: translateX(-11vh);
+      transform: translateX(-5vh);
+      width: 100vw;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      overflow-x: hidden;
     }
   }
   .dashboard__right-panel {

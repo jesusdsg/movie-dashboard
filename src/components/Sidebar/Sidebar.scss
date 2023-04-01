@@ -2,7 +2,7 @@
 
 .sidebar-container {
   position: fixed;
-  width: 20vw;
+  width: 15vw;
   height: 100vh;
   padding-top: 2rem;
 
@@ -11,18 +11,20 @@
     font-size: 14pt;
     color: $light-1;
     text-transform: uppercase;
+    font-weight: normal;
   }
 
   h4 {
     margin: 1rem 2rem;
     font-size: 14pt;
     text-transform: uppercase;
+    font-weight: normal;
   }
 
   .sidebar-container__logo {
-    width: 60%;
+    width: 15vh;
     height: auto;
-    margin: auto;
+    margin: 1rem 2rem;
   }
 
   .sidebar-container__list {
@@ -35,7 +37,7 @@
       align-items: center;
       list-style-type: none;
       width: 100%;
-      padding: 0.8rem 2rem;
+      padding: 0.5rem 2rem;
     }
   }
 }
@@ -51,7 +53,11 @@
     &:hover {
       color: $light-1;
       background-color: $dark-1;
-      border-right: 2px solid $red-1;
+      border-right: 5px solid $red-1;
+
+      svg {
+        fill: $red-1;
+      }
     }
   }
 }

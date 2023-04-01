@@ -6,6 +6,9 @@ import {
   BiWorld,
   BiLogOutCircle,
   BiCog,
+  BiUser,
+  BiWinkTongue,
+  BiRadioCircleMarked,
 } from "react-icons/bi";
 
 export default function Sidebar({ darkMode }: any) {
@@ -29,6 +32,26 @@ export default function Sidebar({ darkMode }: any) {
             title: "Discovery",
             url: "/contact",
             icon: <BiWorld />,
+          },
+        ],
+      },
+      {
+        title: "Social",
+        children: [
+          {
+            title: "Friends",
+            url: "/",
+            icon: <BiUser />,
+          },
+          {
+            title: "Party",
+            url: "/about",
+            icon: <BiWinkTongue />,
+          },
+          {
+            title: "Media",
+            url: "/about",
+            icon: <BiRadioCircleMarked />,
           },
         ],
       },

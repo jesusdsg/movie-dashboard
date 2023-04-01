@@ -17,7 +17,7 @@ h6 {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -218,11 +218,27 @@ h6 {
       max-height: 20vh;
       border-radius: $border-radius;
     }
+    .top__imdb-container {
+      display: inline-flex;
+      gap: 5px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+
+
+      img {
+        height: 4vh;
+      }
+    }
   }
 
   .tops__movie-info {
     width: 100%;
+    display: grid;
     font-size: 10pt;
+    align-content: center;
+    justify-items: start;
+    gap: 0.2rem
   }
 }
 
@@ -251,5 +267,12 @@ h6 {
     &:focus {
       outline: none;
     }
+  }
+}
+
+.carousel__container {
+  @media screen and (max-width: 700px) {
+    //transform: translateX(-5vh);
+    width: 100vw;
   }
 }

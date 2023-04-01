@@ -11,7 +11,7 @@ export default function PopularMovies({ poster, title, description }: any) {
           <div className="movies__btn-container">
             <button className="btn btn--main">Watch</button>
             <button className="btn btn--transparent">
-              <BiPlus />
+              <BiPlus size="1.5rem" />
             </button>
           </div>
         </div>

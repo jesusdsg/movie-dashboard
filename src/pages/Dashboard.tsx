@@ -79,6 +79,7 @@ export default function Dashboard({darkMode}: DashboardProps) {
         </div>
         <Tops title={"Popular Movies"} movies={ratedMovies} />
         <Tops title={"Popular TV Shows"} movies={ratedShows} />
+        <br></br>
       </div>
     </div>
   );

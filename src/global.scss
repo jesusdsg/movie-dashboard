@@ -47,11 +47,12 @@ h6 {
 }
 
 .btn {
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1rem;
   color: #fff;
   border-radius: $border-radius;
   transition-duration: 0.5s;
   width: auto;
+  text-align: center;
 }
 
 .btn--main {
@@ -68,12 +69,10 @@ h6 {
 }
 
 .btn--transparent {
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.253);
   color: $light-1;
-  border: 1px solid $light-1;
   &:hover {
-    background-color: $light-1;
-    color: $dark-1;
+    background-color: rgba(255, 63, 63, 0.384);
   }
 }
 
@@ -89,12 +88,13 @@ h6 {
     background-color: #00000062;
     z-index: 100;
     border-radius: $border-radius !important;
-    text-align: left;
+    text-align: center;
 
     .movies__info-container {
       margin: 20vh 2rem;
       height: 30vh;
       overflow: hidden;
+      text-align: left;
     }
   }
 
@@ -106,7 +106,7 @@ h6 {
 
   .movies__description {
     font-weight: normal;
-    color: $light-3;
+    color: $light-2;
     height: 10vh;
     overflow: hidden;
   }
@@ -126,48 +126,68 @@ h6 {
 }
 
 .actor {
-  margin: 0.5rem;
+  margin: 1rem;
   border-radius: $border-radius;
   transition-duration: 0.5s;
   cursor: pointer;
   &:hover {
     box-shadow: $box-shadow;
   }
+
+  .actor__float-btn {
+    position: absolute;
+    right: 3vh;
+    margin-top: 1vh;
+    z-index: 2000;
+  }
+
   .actor__img {
     height: 100%;
     border-radius: $border-radius;
   }
+
   .actor__info {
     top: 0;
     height: 100%;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.137);
-    top: 0.5rem;
-    height: calc(100% - 1rem);
-    width: calc(100% - 1rem);
+    top: 1rem;
+    height: calc(100% - 2rem);
+    width: calc(100% - 2rem);
     border-radius: $border-radius;
-    text-align: left;
+    text-align: center;
   }
 
   .actor__name {
-    margin-top: 100%;
+    margin-top: 120%;
     font-weight: bold;
     font-size: 10pt;
-    margin-left: 20%;
+    margin-left: auto;
+
+    @media screen and (max-width: 700px) {
+      margin-top: 110%;
+      font-size: 8pt;
+    }
+  }
+
+  .actor__ranking-container {
+    margin: auto;
+    display: flex;
+    align-items: center;
   }
 
   .actor__ranking {
     font-size: 10pt;
-    margin: 0 20%;
+    margin: 0 auto;
     display: flex;
     gap: 0.5rem;
-    align-items: center;
+    align-items: self-start;
     color: $light-2;
   }
 }
 
 .continue {
-  margin: 2rem;
+  margin: 1rem;
   border-radius: $border-radius;
   text-align: left;
   transition-duration: 0.5s;
@@ -175,6 +195,11 @@ h6 {
   &:hover {
     box-shadow: $box-shadow;
   }
+
+  @media screen and (max-width: 700px) {
+    font-size: 8pt;
+  }
+
   .continue__bar {
     height: 5px;
     background-color: $red-1;
@@ -183,6 +208,14 @@ h6 {
     height: 10vh;
     padding: 0.5rem 2rem;
     overflow: hidden;
+
+    @media screen and (max-width: 700px) {
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  .continue__title {
+    font-weight: normal;
   }
 
   .continue__img {
@@ -191,6 +224,10 @@ h6 {
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
     object-fit: cover;
+
+    @media screen and (max-width: 700px) {
+      height: 10vh;
+    }
   }
 }
 
@@ -200,6 +237,9 @@ h6 {
 
 .continue--light {
   background-color: $light-2;
+  h3 {
+    color: $dark-1 !important;
+  }
 }
 
 .tops {
@@ -222,7 +262,6 @@ h6 {
       margin: auto;
       max-height: 20vh;
       border-radius: $border-radius;
-      
     }
 
     .tops__movie__title {
@@ -236,7 +275,6 @@ h6 {
       flex-wrap: wrap;
       align-items: center;
 
-
       img {
         height: 4vh;
       }
@@ -249,7 +287,7 @@ h6 {
     font-size: 10pt;
     align-content: center;
     justify-items: start;
-    gap: 0.2rem
+    gap: 0.2rem;
   }
 }
 
@@ -264,7 +302,6 @@ h6 {
     margin-top: 1.8rem;
     display: flex;
     right: 8vh;
-    
   }
   .search__icon--dark {
     color: $light-3;
@@ -273,8 +310,6 @@ h6 {
   .search__icon--light {
     color: $dark-4;
   }
-
-
 
   .search__input {
     margin-top: 1rem;
@@ -307,14 +342,17 @@ h6 {
   margin-top: 1rem;
   margin-bottom: 2rem;
 
-  h1, h2, h3, h4 {
-    color: $light-1 !important;
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: $light-1;
   }
 
-  span, p{
-    color: $light-2 !important
+  span,
+  p {
+    color: $light-2;
   }
-  
 
   @media screen and (max-width: 700px) {
     //transform: translateX(-5vh);

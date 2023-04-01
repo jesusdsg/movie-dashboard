@@ -1,4 +1,3 @@
-import Layout from "@layouts/Layout";
 import { themeStore } from "../store/theme";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -31,7 +30,6 @@ export default function Login({darkMode}: LoginProps) {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
   return (
-    <Layout>
       <div className="mt-20">
         <form className="login-container">
           <img src="/src/assets/logo.png"></img>
@@ -90,6 +88,5 @@ export default function Login({darkMode}: LoginProps) {
           </div>
         </form>
       </div>
-    </Layout>
   );
 }

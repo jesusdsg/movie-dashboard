@@ -5,6 +5,7 @@
     width: 15vw !important;
     @media screen and (max-width: 700px) {
       transform: translateX(-20vh);
+      z-index: 1000;
     }
   }
   .dashboard__mid-panel {
@@ -36,11 +37,11 @@
   background-color: $dark-1;
 
   h1, h2, h3, h4, h6 {
-    color: $light-1 !important;
+    color: $light-1;
   }
 
   span, p, a {
-    color: $light-3 !important;
+    color: $light-3;
   }
 
 }
@@ -50,11 +51,11 @@
   color: $dark-1;
 
   h1, h2, h3, h4, h6 {
-    color: $dark-1 !important;
+    color: $dark-1;
   }
 
   span, p, a {
-    color: $dark-3 !important;
+    color: $dark-3;
   }
 
 }

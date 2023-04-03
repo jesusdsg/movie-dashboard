@@ -5,6 +5,27 @@
   width: 15vw;
   height: 100vh;
   padding-top: 2rem;
+  padding-bottom: 2rem;
+  overflow-y: scroll;
+
+  @media screen and (max-width: 700px) {
+    width: 100%;
+  }
+
+  /* Custom scrollbar */
+  &::-webkit-scrollbar {
+    width: 0em;
+    height: 0em;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
 
   li {
     color: $light-3;
@@ -22,6 +43,10 @@
         fill: $red-1;
       }
     }
+  }
+
+  .sidebar__menu-container {
+    margin-bottom: 1rem;
   }
 
   .sidebar-container__header {

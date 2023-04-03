@@ -104,35 +104,37 @@ export default function Sidebar({ darkMode }: any) {
         </button>
       </div>
 
-      {menu.items.map((item: any) => {
-        return (
-          <div key={item.title}>
-            <h4>{item.title}</h4>
-            <ul className="sidebar-container__list">
-              {!!item.children
-                ? item.children.map((child: any) => {
-                    return (
-                      <li key={child.title}>
-                        {child.icon}
-                        <a
-                          href={child.url}
-                          key={child.title}
-                          className={
-                            darkMode
-                              ? "sidebar__container__link--dark"
-                              : "sidebar__container__link-light"
-                          }
-                        >
-                          {child.title}
-                        </a>
-                      </li>
-                    );
-                  })
-                : null}
-            </ul>
-          </div>
-        );
-      })}
+      <div className="sidebar__menu-container">
+        {menu.items.map((item: any) => {
+          return (
+            <div key={item.title}>
+              <h4>{item.title}</h4>
+              <ul className="sidebar-container__list">
+                {!!item.children
+                  ? item.children.map((child: any) => {
+                      return (
+                        <li key={child.title}>
+                          {child.icon}
+                          <a
+                            href={child.url}
+                            key={child.title}
+                            className={
+                              darkMode
+                                ? "sidebar__container__link--dark"
+                                : "sidebar__container__link-light"
+                            }
+                          >
+                            {child.title}
+                          </a>
+                        </li>
+                      );
+                    })
+                  : null}
+              </ul>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

@@ -1,14 +1,13 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import MenuTabs from "@components/MenuTabs/MenuTabs";
-import { themeStore } from "../../store/theme";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Carousel } from "react-responsive-carousel";
 import PopularMovies from "@components/Movies/PopularMovies";
 import Actor from "@components/Movies/Actor";
 import ContinueWatching from "@components/Movies/ContinueWatching";
-
+import { AiFillGithub } from "react-icons/ai";
 interface ContentProps {
   darkMode: boolean;
 }
@@ -152,6 +151,12 @@ export default function Content({ darkMode }: ContentProps) {
           })}
         </Carousel>
       </div>
+      <span className="site_sign">
+        Developed by Jesus Salcedo{" "}
+        <a href="https://github.com/jesusdsg">
+          <AiFillGithub size="1rem" />
+        </a>
+      </span>
     </div>
   );
 }

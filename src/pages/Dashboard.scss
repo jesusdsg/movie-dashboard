@@ -35,6 +35,10 @@
       padding-right: 0.5rem;
       overflow-x: hidden;
     }
+
+    @media screen and (max-width: 700px) {
+      padding-bottom: 2rem;
+    }
   }
   .dashboard__right-panel {
     padding-top: 2rem;

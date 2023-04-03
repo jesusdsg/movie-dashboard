@@ -1,7 +1,7 @@
 import { userStore } from "@stores/user";
-import { themeStore } from "../store/theme";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import logo from "@assets/logo.png";
 
 interface LoginProps {
   darkMode: boolean;
@@ -35,7 +35,7 @@ export default function Login({ darkMode }: LoginProps) {
   return (
     <div className="mt-20">
       <form className="login-container">
-        <img src="/src/assets/logo.png"></img>
+        <img src={logo}></img>
         <div className="login-container__input-container">
           <input
             type="text"

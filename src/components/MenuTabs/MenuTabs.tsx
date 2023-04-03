@@ -1,5 +1,13 @@
+import { themeStore } from "@stores/theme";
 import "./MenuTabs.scss";
+import { BiMenu } from "react-icons/bi";
+/**
+ * Menu of movie sections and responsive button
+ * @param param0
+ * @returns
+ */
 export default function MenuTabs({ darkMode }: any) {
+  const toggleMenu = themeStore((store: any) => store.toggleMenu);
   const menu = [
     { title: "TV Series", link: "#", active: false },
     { title: "Movies", link: "#", active: true },
@@ -40,6 +48,9 @@ export default function MenuTabs({ darkMode }: any) {
           }
         }
       )}
+      <button type="button" className="mobile__menu" onClick={toggleMenu}>
+        <BiMenu size="1.5rem" />
+      </button>
     </div>
   );
 }

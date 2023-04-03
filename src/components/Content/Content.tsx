@@ -12,7 +12,11 @@ import ContinueWatching from "@components/Movies/ContinueWatching";
 interface ContentProps {
   darkMode: boolean;
 }
-
+/**
+ * Main component to be diplayed in the mid section of the dashboard
+ * @param param0
+ * @returns
+ */
 export default function Content({ darkMode }: ContentProps) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [actorsCenterSlide, setActorsCenterSlide] = useState(20);
@@ -42,15 +46,16 @@ export default function Content({ darkMode }: ContentProps) {
 
   useEffect(() => {
     getPopMovies();
-    getRatedActors();  
+    getRatedActors();
     const handleScreenChange = () => {
-      windowWidth >= 650 && setActorsCenterSlide(25), setContinueCenterSlide(60);
+      windowWidth >= 650 && setActorsCenterSlide(25),
+        setContinueCenterSlide(60);
       windowWidth < 650 && setActorsCenterSlide(40), setContinueCenterSlide(40);
     };
     const handleWindowResize = () => {
       setWindowWidth(window.innerWidth);
     };
-    
+
     handleScreenChange();
     window.addEventListener("resize", handleWindowResize);
     return () => {
@@ -70,7 +75,11 @@ export default function Content({ darkMode }: ContentProps) {
             showIndicators={false}
             infiniteLoop={true}
             autoPlay
-            className={darkMode ? "carousel__container carousel__container--dark" : "carousel__container carousel__container--light" }
+            className={
+              darkMode
+                ? "carousel__container carousel__container--dark"
+                : "carousel__container carousel__container--light"
+            }
           >
             {popMovies.slice(1, 8).map((movie: any) => {
               return (
@@ -96,10 +105,13 @@ export default function Content({ darkMode }: ContentProps) {
           centerMode={true}
           swipeable
           centerSlidePercentage={actorsCenterSlide}
-          className={darkMode ? "carousel__container carousel__container--dark" : "carousel__container carousel__container--light" }
+          className={
+            darkMode
+              ? "carousel__container carousel__container--dark"
+              : "carousel__container carousel__container--light"
+          }
         >
           {ratedActors.slice(9, 20).map((actor: any) => {
-            console.log('Actor is', actor)
             return (
               <Actor
                 key={actor.id}
@@ -122,7 +134,11 @@ export default function Content({ darkMode }: ContentProps) {
           swipeable
           autoPlay
           centerSlidePercentage={continueCenterSlide}
-          className={darkMode ? "carousel__container carousel__container--dark" : "carousel__container carousel__container--light" }
+          className={
+            darkMode
+              ? "carousel__container carousel__container--dark"
+              : "carousel__container carousel__container--light"
+          }
         >
           {popMovies.slice(7, 14).map((movie: any) => {
             return (

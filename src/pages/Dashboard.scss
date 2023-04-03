@@ -2,12 +2,27 @@
 .dashboard {
   display: flex;
   .dashboard__left-panel {
+    transition-duration: 0.8s;
     width: 15vw !important;
     @media screen and (max-width: 700px) {
-      transform: translateX(-20vh);
+      transform: translateX(-42vw);
       z-index: 1000;
     }
   }
+
+  .dashboard__left-panel--toggled {
+    @media screen and (max-width: 700px) {
+      transition-duration: 0.8s;
+      transform: translateX(0vw);
+      width: 50vw !important;
+      position: fixed;
+      height: 100vh;
+      border-color: $red-1;
+      padding-bottom: 2rem;
+      overflow-y: auto;
+    }
+  }
+
   .dashboard__mid-panel {
     margin-top: 2rem;
     padding-left: 2rem;
@@ -36,36 +51,48 @@
   color: $light-1;
   background-color: $dark-1;
 
-  h1, h2, h3, h4, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h6 {
     color: $light-1;
   }
 
-  span, p, a {
+  span,
+  p,
+  a {
     color: $light-3;
   }
-
 }
 
 .dashboard--light {
   background-color: $light-1;
   color: $dark-1;
 
-  h1, h2, h3, h4, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h6 {
     color: $dark-1;
   }
 
-  span, p, a {
+  span,
+  p,
+  a {
     color: $dark-3;
   }
-
 }
 
 .dashboard__left-panel--dark {
   border-right: 1px solid $dark-2;
+  background-color: $dark-1;
 }
 
 .dashboard__left-panel--light {
   border-right: 1px solid $light-2;
+  background-color: $light-1;
 }
 
 .dashboard__right-panel--dark {

@@ -359,3 +359,16 @@ h6 {
     width: 100vw;
   }
 }
+
+.mobile__menu {
+  display: none;
+  transition-duration: 0.5s;
+  padding: 0.5rem 0.5rem;
+  border-radius: $border-radius;
+  &:hover {
+    background-color: rgba(133, 133, 133, 0.231);
+  }
+  @media screen and (max-width: 700px) {
+    display: inherit;
+  }
+}

@@ -12,6 +12,11 @@
     &:hover {
       color: $light-1;
       border-right: 5px solid $red-1;
+      @media screen and (max-width: 700px) {
+        transition-duration: 0.2s;
+        border: none;
+        font-weight: bold;
+      }
 
       svg {
         fill: $red-1;

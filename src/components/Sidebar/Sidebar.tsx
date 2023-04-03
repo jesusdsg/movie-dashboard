@@ -1,4 +1,3 @@
-import React from "react";
 import "./Sidebar.scss";
 import {
   BiBuildings,
@@ -14,9 +13,14 @@ import {
 import { BiSun, BiMoon } from "react-icons/bi";
 import { themeStore } from "@stores/theme";
 
-import logoDark from '@assets/logo.png';
-import logoLight from '@assets/logolight.png';
+import logoDark from "@assets/logo.png";
+import logoLight from "@assets/logolight.png";
 
+/**
+ * Component of the side navigation with responsive and pc supoort
+ * @param darkMode
+ * @returns
+ */
 export default function Sidebar({ darkMode }: any) {
   const toggleDarkMode = themeStore((store: any) => store.toggleDarkMode);
   const menu = {
@@ -27,17 +31,17 @@ export default function Sidebar({ darkMode }: any) {
         children: [
           {
             title: "Home",
-            url: "/",
+            url: "/dashboard",
             icon: <BiHome />,
           },
           {
             title: "Comunity",
-            url: "/about",
+            url: "/dashboard",
             icon: <BiBuildings />,
           },
           {
             title: "Discovery",
-            url: "/contact",
+            url: "/dashboard",
             icon: <BiWorld />,
           },
         ],
@@ -47,17 +51,17 @@ export default function Sidebar({ darkMode }: any) {
         children: [
           {
             title: "Friends",
-            url: "/",
+            url: "/dashboard",
             icon: <BiUser />,
           },
           {
             title: "Party",
-            url: "/about",
+            url: "/dashboard",
             icon: <BiWinkTongue />,
           },
           {
             title: "Media",
-            url: "/about",
+            url: "/dashboard",
             icon: <BiRadioCircleMarked />,
           },
         ],
@@ -67,12 +71,12 @@ export default function Sidebar({ darkMode }: any) {
         children: [
           {
             title: "Settings",
-            url: "/",
+            url: "/dashboard",
             icon: <BiCog />,
           },
           {
             title: "Logout",
-            url: "/about",
+            url: "/dashboard",
             icon: <BiLogOutCircle />,
           },
         ],
@@ -110,7 +114,15 @@ export default function Sidebar({ darkMode }: any) {
                     return (
                       <li key={child.title}>
                         {child.icon}
-                        <a href={child.url} key={child.title} className={darkMode ? 'sidebar__container__link--dark' : 'sidebar__container__link-light'}>
+                        <a
+                          href={child.url}
+                          key={child.title}
+                          className={
+                            darkMode
+                              ? "sidebar__container__link--dark"
+                              : "sidebar__container__link-light"
+                          }
+                        >
                           {child.title}
                         </a>
                       </li>

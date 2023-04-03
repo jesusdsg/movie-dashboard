@@ -4,6 +4,7 @@ This is a repo with demo and educational purposes, a basic project where you can
 
 ## Technologies:
 - React
+- Zustand
 - SASS
 - BEM CSS methodology
 - Axios for HTTP 

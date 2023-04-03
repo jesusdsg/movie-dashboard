@@ -58,12 +58,17 @@ export default function Dashboard({ darkMode, menu }: DashboardProps) {
         darkMode ? "dashboard dashboard--dark" : "dashboard dashboard--light"
       }
     >
+      {/* Left panel where menu is located */}
       <div className={leftPanelClass}>
         <Sidebar darkMode={darkMode} />
       </div>
+
+      {/* Mid panel with the main content */}
       <div className="dashboard__mid-panel">
         <Content darkMode={darkMode} />
       </div>
+
+      {/* Right panel, extras and search */}
       <div
         className={
           darkMode

@@ -9,3 +9,5 @@ This is a repo with demo and educational purposes, a basic project where you can
 - Axios for HTTP 
 
 Please, feel free to clone and use it as a base or more.
+
+[Demo here](https://muuvi.netlify.app)

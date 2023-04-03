@@ -7,14 +7,17 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+.env/
 node_modules
 dist
 dist-ssr
 *.local
 
-.env/*
+# local env files
+.env*.local
 .env
-/env/*
+.env.test
+.env/*
 
 
 # Editor directories and files

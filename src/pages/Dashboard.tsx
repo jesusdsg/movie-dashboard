@@ -7,6 +7,8 @@ import axios from "axios";
 const API_KEY = import.meta.env.VITE_API_KEY;
 import { BiSearch } from "react-icons/bi";
 import classNames from "classnames";
+import { useNavigate } from "react-router-dom";
+import { userStore } from "@stores/user";
 
 interface DashboardProps {
   darkMode: boolean;
@@ -14,7 +16,8 @@ interface DashboardProps {
 }
 
 export default function Dashboard({ darkMode, menu }: DashboardProps) {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const isLogged = userStore((store: any) => store.isLogged);
+  const navigate = useNavigate();
   const [ratedMovies, setRatedMovies] = useState<any>([]);
   const [ratedShows, setRatedShows] = useState<any>([]);
   const getRatedMovies = async () => {
@@ -32,9 +35,16 @@ export default function Dashboard({ darkMode, menu }: DashboardProps) {
     setRatedShows(shows.results);
   };
   useEffect(() => {
+    checkLoggedUser();
     getRatedMovies();
     getRatedShows();
   }, []);
+
+  const checkLoggedUser = () => {
+    if (!isLogged) {
+      navigate("/");
+    }
+  };
 
   const leftPanelClass = classNames("dashboard__left-panel", {
     "dashboard__left-panel--toggled": menu,

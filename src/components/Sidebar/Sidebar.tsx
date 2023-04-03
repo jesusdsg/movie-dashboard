@@ -31,17 +31,17 @@ export default function Sidebar({ darkMode }: any) {
         children: [
           {
             title: "Home",
-            url: "/dashboard",
+            url: "#",
             icon: <BiHome />,
           },
           {
             title: "Comunity",
-            url: "/dashboard",
+            url: "#",
             icon: <BiBuildings />,
           },
           {
             title: "Discovery",
-            url: "/dashboard",
+            url: "#",
             icon: <BiWorld />,
           },
         ],
@@ -51,17 +51,17 @@ export default function Sidebar({ darkMode }: any) {
         children: [
           {
             title: "Friends",
-            url: "/dashboard",
+            url: "#",
             icon: <BiUser />,
           },
           {
             title: "Party",
-            url: "/dashboard",
+            url: "#",
             icon: <BiWinkTongue />,
           },
           {
             title: "Media",
-            url: "/dashboard",
+            url: "#",
             icon: <BiRadioCircleMarked />,
           },
         ],
@@ -71,12 +71,12 @@ export default function Sidebar({ darkMode }: any) {
         children: [
           {
             title: "Settings",
-            url: "/dashboard",
+            url: "#",
             icon: <BiCog />,
           },
           {
             title: "Logout",
-            url: "/dashboard",
+            url: "/",
             icon: <BiLogOutCircle />,
           },
         ],

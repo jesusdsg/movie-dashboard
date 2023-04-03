@@ -12,3 +12,5 @@ This is a repo with demo and educational purposes, a basic project where you can
 Please, feel free to clone and use it as a base or more.
 
 [Demo here](https://muuvi.netlify.app)
+
+Username: `admin@mail.com` and Password: `admin`

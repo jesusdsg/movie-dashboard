@@ -1,0 +1,72 @@
+@import "./variables.scss";
+
+.login-container {
+  width: 25%;
+  margin: auto;
+  padding: 1rem;
+
+  @media (max-width: $mobile-max-screen) {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .login-container__label {
+    font-size: 1rem;
+  }
+
+  .login-container__input-container {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    .login-container__input--light {
+      width: 100%;
+      padding: 0.5rem 1rem;
+      border-radius: $border-radius;
+      background-color: $light-2;
+      color: $dark-1;
+      border: 1px solid $light-4;
+      outline: none;
+      &:hover {
+        transition-duration: 0.3s;
+        border: 1px solid $light-3;
+      }
+    }
+
+    .login-container__input--dark {
+      width: 100%;
+      padding: 0.5rem 1rem;
+      border-radius: $border-radius;
+      background-color: $dark-2;
+      color: $light-1;
+      border: 1px solid $dark-3;
+      outline: none;
+      &:hover {
+        transition-duration: 0.3s;
+        border: 1px solid $dark-4;
+      }
+    }
+
+    .login_container__label--error {
+      color: $red-1;
+      font-size: 10pt;
+      text-align: center;
+      margin-left: 1rem;
+    }
+  }
+
+  .login-container__btn-container {
+    display: flex;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  .login-container__forgot {
+    font-size: 10pt;
+    margin: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    transition-duration: 0.5s;
+    &:hover {
+      color: $light-3;
+    }
+  }
+}
